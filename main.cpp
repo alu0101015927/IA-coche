@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-#include "test_header.h"
+#include "terrain.h"
 /*
 char test()
 {

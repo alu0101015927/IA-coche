@@ -4,7 +4,7 @@
 #include <chrono>
 
 
-#include "test_header.h"
+#include "terrain.h"
 
 #define RAND_CHOCU 1
 
