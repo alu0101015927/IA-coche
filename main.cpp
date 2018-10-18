@@ -3,6 +3,8 @@
 #include <vector>
 
 #include "terrain.h"
+#include "car.h"
+#include "mediator.h"
 /*
 char test()
 {

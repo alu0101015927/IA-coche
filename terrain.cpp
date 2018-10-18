@@ -6,6 +6,7 @@
 
 #include "terrain.h"
 
+
 #define RAND_CHOCU 1
 
 terrain::terrain(int m, int n)
@@ -143,8 +144,8 @@ std::ostream& terrain::write_all(std::ostream&)
     
     for(int i = 0; i < m_; i++)
         std::cout << '_';
-
     
+    std::cout << '\n';
 }
 
 
