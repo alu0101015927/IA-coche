@@ -2,8 +2,7 @@
 #include <iostream>
 #include <vector>
 
-#include "terrain.h"
-#include "car.h"
+
 #include "mediator.h"
 /*
 char test()
@@ -31,13 +30,9 @@ int main()
     std::cin >> i;
     std::cin >> j;
     
-    terrain A(i,j);
+    //terrain A(i,j);
+    mediator M;
     
-    std::cout << "Desea imprimir la matriz? (S/N) \n";
-    std::cin >> b;
-    
-    if((b == 's') | (b == 'S'))
-        A.w();
     
 }
 

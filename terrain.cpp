@@ -7,9 +7,13 @@
 #include "terrain.h"
 
 
-#define RAND_CHOCU 1
+terrain::terrain()
+{
+    
+    
+}
 
-terrain::terrain(int m, int n)
+void terrain::create(int m, int n)
 {
     //char M[m][n];
     m_ = m;
@@ -93,6 +97,10 @@ void terrain::w()
 {
     write_all(std::cout);
 }
+
+
+
+
 
 std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)
 {

@@ -12,7 +12,7 @@ car::~car()
     
 }
 
-void car::move()
+void car::move(std::pair<int,int> pos)
 {
     
     
@@ -20,7 +20,7 @@ void car::move()
 }
 
 
-void car::auto()
+void car::autom()
 {
     
     
@@ -28,7 +28,7 @@ void car::auto()
 
 
 
-std::ostream& write(std::ostream& os)
+std::ostream& car::write(std::ostream& os)
 {
     
     

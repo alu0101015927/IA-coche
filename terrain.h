@@ -14,9 +14,10 @@ private:
 
 public:
 
-    terrain(int m, int n);
+    terrain();
     ~terrain();
 
+    void create(int m, int n);
     void w();
 
     std::ostream& write_char(std::ostream& os, char a, int i, int j);
