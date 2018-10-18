@@ -17,6 +17,10 @@ public:
 terrain(int m, int n);
 ~terrain();
 
-std::ostream& write(std::ostream& os, M_, int i, int j);
+void w();
+
+std::ostream& write_char(std::ostream& os, char a, int i, int j);
+
+std::ostream& write_all(std::ostream& os);
 
 };

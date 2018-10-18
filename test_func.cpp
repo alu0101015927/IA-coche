@@ -14,7 +14,7 @@ terrain::terrain(int m, int n)
     m_ = m;
     n_ = n;
     
-    M_.resize(m_, n_);
+    M_.resize(m_, std::vector<char>(n_));
     
     std::cout << "Desea que la generación de obstáculos sea aleatoria? (S/N)" << '\n';
     
@@ -45,9 +45,9 @@ terrain::terrain(int m, int n)
                 
                 //std::cout << dice_roll << ' ' << a << '\n';
                 
-                M[i][j] = a;
+                M_[i][j] = a;
                 
-                write(std::cout, M[i][j], i, j);
+                write_char(std::cout, M_[i][j], i, j);
                 
             }
         }
@@ -62,11 +62,11 @@ terrain::terrain(int m, int n)
                 
                 std::cout << "Posición" << '[' << i << ',' << j << ']' << ':' << ' ';
                 std::cin >> a;
-                M[i][j] = a;
+                M_[i][j] = a;
 
             }
             for(int j = 0; j < n_; j++)
-                write(std::cout, M[i][j], i, j);
+                write_char(std::cout, M_[i][j], i, j);
         }
         
             
@@ -74,7 +74,7 @@ terrain::terrain(int m, int n)
         
         for(int i = 0; i < m_; i++)
             for(int j = 0; j < n_; j++)
-                write(std::cout, M[i][j], i, j);
+                write_char(std::cout, M_[i][j], i, j);
     }
     
     
@@ -88,8 +88,12 @@ terrain::~terrain()
 }
 
 
+void terrain::w()
+{
+    write_all(std::cout);
+}
 
-std::ostream& terrain::write(std::ostream& os, char a, int i, int j)
+std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)
 {
 
     //assert((i <= m_) && (j <= n_));
@@ -111,7 +115,37 @@ std::ostream& terrain::write(std::ostream& os, char a, int i, int j)
 
 
 
+std::ostream& terrain::write_all(std::ostream&)
+{
+    
+    for(int i = 0; i < m_; i++)
+        std::cout << '_';
+    
+    std::cout << '\n';
+    
+    for(int i = 0; i < m_; i++){
+        for(int j = 0; j < n_; j++){
+            
+            if(j == 0)
+                std::cout << '|';
+    
+    
+            if(M_[i][j] == 'b')
+                std::cout << 'O' << ' ';
+    
+            else     
+                std::cout << ' ' << ' ';
+        
+            if(j >= (n_ - 1))
+                std::cout << '|' << '\n';
+        }
+    }
+    
+    for(int i = 0; i < m_; i++)
+        std::cout << '_';
 
+    
+}
 
 
 

@@ -31,5 +31,11 @@ int main()
     
     terrain A(i,j);
     
+    std::cout << "Desea imprimir la matriz? (S/N) \n";
+    std::cin >> b;
+    
+    if((b == 's') | (b == 'S'))
+        A.w();
+    
 }
 
