@@ -117,7 +117,7 @@ std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)
 
 std::ostream& terrain::write_all(std::ostream&)
 {
-    
+
     for(int i = 0; i < m_; i++)
         std::cout << '_';
     
