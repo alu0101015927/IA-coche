@@ -12,7 +12,14 @@ car::~car()
     
 }
 
-void car::move(std::pair<int,int> pos)
+void car::init(int x, int y)
+{
+    car_.x_ = x;
+    car_.x_ = y;
+    car_.direc_ = 'w';
+}
+
+void car::move(int x, int y, bool w, bool a, bool s, bool d)
 {
     
     

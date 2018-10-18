@@ -5,8 +5,9 @@
 
 struct C
 {
-    std::pair<int, int> pos_;
-    int direc_;
+    int x_;
+    int y_;
+    char direc_;
     
 };
 
@@ -19,7 +20,8 @@ public:
     car();
     ~car();
 
-    void move(std::pair<int,int> pos);
+    void init(int x, int y);
+    void move(int x, int y, bool w, bool a, bool s, bool d);
 
     void autom();
 

@@ -7,13 +7,26 @@
 
 mediator::mediator()
 {
-    int i;
-    int j;
-    std::cout << "Introduce tamaño del mapa (mxn) \n";
-    std::cin >> i;
-    std::cin >> j;
+    char opt;
     
-    T.create(i,j);
+    std::cout << "Deseas introducir el tamaño del mapa? (S/N) (por defecto: 50x50) \n";
+    std::cin >> opt;
+
+
+    if(opt == ('s' | 'N')){
+        int i;
+        int j;
+        std::cout << "Introduce tamaño del mapa (mxn) \n";
+        std::cin >> i;
+        std::cin >> j;
+    
+        T.create(i,j);
+    }
+    else{
+        T.create(50,50);
+    }
+    
+    
     
     
 }
