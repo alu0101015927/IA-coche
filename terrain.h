@@ -18,7 +18,7 @@ public:
     terrain();
     ~terrain();
 
-    void create(int m, int n);              //Crea el terreno y lo imprimes
+    void create(int m, int n, int p);              //Crea el terreno y lo imprimes
     void w();                               //Manda a imprimir el terreno
     
     char get_pos(int i, int j);

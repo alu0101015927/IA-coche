@@ -25,6 +25,8 @@ public:
     void init_m(int x, int y);              //Coloca el coche en una posición que tú le indicas 
     void init_a(int max_i, int max_j);      //Coloca el coche en una posición aleatoria (De las libres)
     
+    std::pair<int,int> get_pos();
+    
     void move(int x, int y, bool w, bool a, bool s, bool d);    //Mueves el coche de manera manual  (Sin implementar)
 
     void autom();           //El coche se mueve de manera automática (sin implementar)

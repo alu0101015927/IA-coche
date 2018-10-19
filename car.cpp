@@ -46,26 +46,30 @@ void car::init_a(int max_i, int max_j)
     
     std::default_random_engine generator;
     int dice_roll;
-        
-    bool valid = false;
     
-    do{
-        std::uniform_int_distribution<int> unif_i(0,max_i);
-        dice_roll = unif_i(rng);  // generates number in the range 0..1 
-        
-        car_.x_ = dice_roll;
 
-        std::uniform_int_distribution<int> unif_j(0,max_j);
-        dice_roll = unif_j(rng);  // generates number in the range 0..1 
+    std::uniform_int_distribution<int> unif_i(0,max_i);
+    dice_roll = unif_i(rng);  // generates number in the range 0..1 
+    
+    car_.x_ = dice_roll;
 
-        car_.y_ = dice_roll;
-        
-        
-    }while(valid == false);
+    std::uniform_int_distribution<int> unif_j(0,max_j);
+    dice_roll = unif_j(rng);  // generates number in the range 0..1 
+
+    car_.y_ = dice_roll;
+
 }
 
 
 
+std::pair<int,int> car::get_pos()
+{
+    std::pair<int,int> aux;
+    aux.first = car_.x_;
+    aux.second = car_.y_;
+    
+    return aux;
+}
 
 void car::move(int x, int y, bool w, bool a, bool s, bool d)
 {
@@ -89,5 +93,5 @@ void car::autom()
 std::ostream& car::write(std::ostream& os)
 {
     
-    
+    return os;   
 }

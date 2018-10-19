@@ -25,9 +25,9 @@ terrain::~terrain()
 
 
 
-void terrain::create(int m, int n)
+void terrain::create(int m, int n, int p)
 {
-    //char M[m][n];
+    
     m_ = m;
     n_ = n;
     
@@ -39,9 +39,11 @@ void terrain::create(int m, int n)
     char b;
     std::cin >> b;
     
+    int q;
     
     if(b == 'S'){
-    
+        
+
         for(int i = 0; i < m_; i++){
             for(int j = 0; j < n_; j++){ 
 
@@ -51,19 +53,22 @@ void terrain::create(int m, int n)
                 uint64_t timeSeed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
                 std::seed_seq ss{uint32_t(timeSeed & 0xffffffff), uint32_t(timeSeed>>32)};
                 rng.seed(ss);
-
+                
+                q = 10 - p;
 
                 std::default_random_engine generator;
-                std::uniform_int_distribution<int> unif(0,1);
+                std::uniform_int_distribution<int> unif(0,q);
                 int dice_roll = unif(rng);  // generates number in the range 0..1 
                 
                 
-                a = dice_roll + 97;
                 
-                //std::cout << dice_roll << ' ' << a << '\n';
-                
-                M_[i][j] = a;
-                
+                if(dice_roll == 0){
+                    M_[i][j] = 'o';
+                }
+                else{
+                    M_[i][j] = ' ';
+                }
+
                 write_char(std::cout, M_[i][j], i, j);
                 
             }
@@ -96,9 +101,9 @@ void terrain::create(int m, int n)
 
 }
 
-    
-    
-    
+
+
+
 char terrain::get_pos(int i, int j)
 {
     return M_[i][j];
@@ -109,7 +114,7 @@ char terrain::get_pos(int i, int j)
 
 void terrain::set_pos(int i, int j, char a)
 {
-    M_[i][j] = a;
+    M_[i][j] = 'o';
 }
 
 
@@ -132,21 +137,18 @@ std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)
         std::cout << '|';
     
     
-    if(a == 'b')
-        std::cout << 'O' << ' ';
+    std::cout << M_[i][j] << ' ';
     
-    else     
-        std::cout << ' ' << ' ';
-        
     if(j >= (n_ - 1))
         std::cout << '|' << '\n';
     
+    return os;
 }
 
 
 
 
-std::ostream& terrain::write_all(std::ostream&)
+std::ostream& terrain::write_all(std::ostream& os)
 {
 
     for(int i = 0; i < m_; i++)
@@ -176,6 +178,9 @@ std::ostream& terrain::write_all(std::ostream&)
         std::cout << '_';
     
     std::cout << '\n';
+
+    return os;
+    
 }
 
 
