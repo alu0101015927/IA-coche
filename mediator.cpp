@@ -58,6 +58,9 @@ mediator::mediator()
     
 }
 
+
+
+
 mediator::~mediator()
 {
     
@@ -65,12 +68,17 @@ mediator::~mediator()
     
 }
 
+
+
+
 void mediator::run()
 {
     
     
     
 }
+
+
 
 
 std::ostream& mediator::write(std::ostream& os)

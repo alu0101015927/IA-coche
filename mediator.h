@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-
+    // Coordina todo, e indica que tienen que hacer terrain y car
 class mediator
 {
 private:
@@ -16,7 +16,7 @@ public:
     
     ~mediator();
     
-    void run();
+    void run();         // Itera hasta que acabe.
     
     std::ostream& write(std::ostream& os);
     

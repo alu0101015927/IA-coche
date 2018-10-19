@@ -1,14 +1,20 @@
 #include "car.h"
 
+
 #include <iostream>
 #include <random>
 #include <chrono>
+
+
 
 
 car::car()
 {
     
 }
+
+
+
 
 car::~car()
 {
@@ -17,12 +23,16 @@ car::~car()
 }
 
 
+
+
 void car::init_m(int x, int y)
 {
     car_.x_ = x;
     car_.x_ = y;
     car_.direc_ = 'w';
 }
+
+
 
 
 void car::init_a(int max_i, int max_j)
@@ -52,15 +62,10 @@ void car::init_a(int max_i, int max_j)
         
         
     }while(valid == false);
-                
-                
-    
-                
-        //std::cout << dice_roll << ' ' << a << '\n';
-                
-            
-
 }
+
+
+
 
 void car::move(int x, int y, bool w, bool a, bool s, bool d)
 {
@@ -70,11 +75,14 @@ void car::move(int x, int y, bool w, bool a, bool s, bool d)
 }
 
 
+
+
 void car::autom()
 {
     
     
 }
+
 
 
 

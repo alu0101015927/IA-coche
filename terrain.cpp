@@ -1,10 +1,11 @@
+#include "terrain.h"
+
 
 #include <iostream>
 #include <random>
 #include <chrono>
 
 
-#include "terrain.h"
 
 
 terrain::terrain()
@@ -12,6 +13,17 @@ terrain::terrain()
     
     
 }
+
+
+
+
+terrain::~terrain()
+{
+    
+}
+
+
+
 
 void terrain::create(int m, int n)
 {
@@ -85,16 +97,15 @@ void terrain::create(int m, int n)
 }
 
     
-terrain::~terrain()
-{
     
-}
-
-
+    
 char terrain::get_pos(int i, int j)
 {
     return M_[i][j];
 }
+
+
+
 
 void terrain::set_pos(int i, int j, char a)
 {
@@ -102,10 +113,14 @@ void terrain::set_pos(int i, int j, char a)
 }
 
 
+
+
 void terrain::w()
 {
     write_all(std::cout);
 }
+
+
 
 
 std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)
@@ -127,6 +142,7 @@ std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)
         std::cout << '|' << '\n';
     
 }
+
 
 
 
