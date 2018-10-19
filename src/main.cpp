@@ -11,9 +11,7 @@ int main()
 {
     std::cout << "Empieza el programa \n";
     mediator M;
-    
-    std::cout << "fin del programa \n";
-    
+
     return 0;
 }
 
