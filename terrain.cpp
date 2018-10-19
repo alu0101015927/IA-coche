@@ -81,9 +81,7 @@ void terrain::create(int m, int n)
             for(int j = 0; j < n_; j++)
                 write_char(std::cout, M_[i][j], i, j);
     }
-    
-    
-    
+
 }
 
     
@@ -93,13 +91,21 @@ terrain::~terrain()
 }
 
 
+char terrain::get_pos(int i, int j)
+{
+    return M_[i][j];
+}
+
+void terrain::set_pos(int i, int j, char a)
+{
+    M_[i][j] = a;
+}
+
+
 void terrain::w()
 {
     write_all(std::cout);
 }
-
-
-
 
 
 std::ostream& terrain::write_char(std::ostream& os, char a, int i, int j)

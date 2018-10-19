@@ -19,6 +19,9 @@ public:
 
     void create(int m, int n);
     void w();
+    
+    char get_pos(int i, int j);
+    void set_pos(int i, int j, char a);
 
     std::ostream& write_char(std::ostream& os, char a, int i, int j);
 
